@@ -30,10 +30,10 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     if(args.stream_twitter):
-        access_token = "529412295-hOTmVeR3LB0luZqspro3iYoAvYGQ2VLxBRkkSCwP"
-        access_token_secret = "0kwpFyp7y29MaQa8Q6yg6f9DKv9UwkhAswLpC0C5PtCuV"
-        api_key = "s9exhF2ZuidZxGj29pngvzNzB"
-        api_secret_key = "yzvFcsjYgI748Dp9xFh3lQVwymLdnPJGPovTwMqe7Ggw5b2hQs"
+        access_token = "YOUR KEY"
+        access_token_secret = "YOUR KEY"
+        api_key = "YOUR KEY"
+        api_secret_key = "YOUR KEY"
 
         # Data Collection
         twitter_api = TwitterAPI(access_token, access_token_secret, api_key, api_secret_key)

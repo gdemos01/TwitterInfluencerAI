@@ -1,6 +1,8 @@
 # Twitter Influencer AI - Kylie Trump
 An AI that generates tweets inspired by famous "influencers" using NLP (ft Donald Trump & Kylie Jenner)
 
+### YouTube Video with Process and Results: https://youtu.be/YIvfM_DP918
+
 <img align="left" width="130" src="https://github.com/gdemos01/TwitterInfluencerAI/blob/master/data/KylieTrump.jpg">
 
 ### Kylie Trump
