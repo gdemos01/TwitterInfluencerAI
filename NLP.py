@@ -79,6 +79,7 @@ class NLP:
             tf.keras.layers.GRU(rnn_nodes,return_sequences=True,
                                 stateful=True,
                                 recurrent_initializer='glorot_uniform'),
+            tf.keras.layers.Dropout(0.2),
             tf.keras.layers.Dense(vocabulary_size)
             # Consider adding an additional Dropout layer to improve performance
         ])
@@ -101,7 +102,19 @@ class NLP:
             save_best_only=True,
             save_weights_only=True
         )
-        model.fit(dataset, epochs=n_epochs, callbacks=[checkpoint_callback])
+
+        reduce_lr = tf.keras.callbacks.ReduceLROnPlateau(
+            monitor="loss",
+            factor=0.1,
+            patience=7,
+            verbose=0,
+            mode="auto",
+            min_delta=0.0001,
+            cooldown=0,
+            min_lr=0
+        )
+
+        model.fit(dataset, epochs=n_epochs, callbacks=[checkpoint_callback,reduce_lr])
 
     """
         Generating new text (one character at a time) based on an initial seed.
